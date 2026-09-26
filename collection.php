@@ -1,0 +1,8 @@
+<?php require __DIR__ . '/includes/data.php'; $pageTitle = 'Collection'; $activePage = 'collection'; require __DIR__ . '/includes/header.php'; ?>
+<main>
+    <section class="page-hero"><span class="eyebrow">The edit</span><h1>Signature scents.</h1><p>A small collection of expressive compositions, selected for the way they settle into real life.</p></section>
+    <section class="page-wrap"><div class="section-title"><div><span class="eyebrow">Six ways to feel</span><h2>Find your atmosphere</h2></div><span class="eyebrow"><?= count($fragrances) ?> fragrances</span></div><div class="product-grid">
+        <?php foreach ($fragrances as $fragrance): ?><article class="product-card"><div class="product-visual"><img src="<?= htmlspecialchars($fragrance['image']) ?>" alt="<?= htmlspecialchars($fragrance['name']) ?> perfume"><span class="product-tag"><?= htmlspecialchars($fragrance['category']) ?></span></div><div class="product-meta"><h3><?= htmlspecialchars($fragrance['name']) ?> <span><?= htmlspecialchars($fragrance['house']) ?></span></h3><p><?= htmlspecialchars($fragrance['description']) ?></p><div class="product-bottom"><span class="price"><?= htmlspecialchars($fragrance['price']) ?> <small>/ <?= htmlspecialchars($fragrance['size']) ?></small></span><div class="notes"><?php foreach (array_slice($fragrance['notes'], 0, 2) as $note): ?><span class="note"><?= htmlspecialchars($note) ?></span><?php endforeach; ?></div></div></div></article><?php endforeach; ?>
+    </div></section>
+</main>
+<?php require __DIR__ . '/includes/footer.php'; ?>
