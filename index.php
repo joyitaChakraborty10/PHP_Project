@@ -1,10 +1,12 @@
 <?php
+session_start();
+require __DIR__ . '/includes/data.php';
 $fragrances = [
     [
         'name' => 'Santal 33',
         'house' => 'Le Labo',
         'category' => 'Woody',
-        'price' => '$230',
+        'price' => 19090,
         'size' => '50 ml / 1.7 fl oz',
         'image' => 'https://images.unsplash.com/photo-1547887538-e3a2f32cb1cc?auto=format&fit=crop&w=900&q=85',
         'description' => 'A smoky, warm composition where Australian sandalwood meets cedarwood and a trace of spice.',
@@ -15,7 +17,7 @@ $fragrances = [
         'name' => 'Another 13',
         'house' => 'Le Labo',
         'category' => 'Musk',
-        'price' => '$230',
+        'price' => 19090,
         'size' => '50 ml / 1.7 fl oz',
         'image' => 'https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=900&q=85',
         'description' => 'An addictive halo of ambrette, moss and jasmine that lingers close to the skin.',
@@ -26,7 +28,7 @@ $fragrances = [
         'name' => 'Gypsy Water',
         'house' => 'Byredo',
         'category' => 'Fresh',
-        'price' => '$225',
+        'price' => 18675,
         'size' => '50 ml / 1.7 fl oz',
         'image' => 'https://images.unsplash.com/photo-1615634260167-c8cdede054de?auto=format&fit=crop&w=900&q=85',
         'description' => 'A fresh and woody fragrance inspired by colourful Romani nights and Nordic forests.',
@@ -37,7 +39,7 @@ $fragrances = [
         'name' => 'Mojave Ghost',
         'house' => 'Byredo',
         'category' => 'Floral',
-        'price' => '$225',
+        'price' => 18675,
         'size' => '50 ml / 1.7 fl oz',
         'image' => 'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=900&q=85',
         'description' => 'A desert bloom with powdery violet, magnolia and sandalwood, soft as sun-warmed air.',
@@ -48,7 +50,7 @@ $fragrances = [
         'name' => 'Bal d’Afrique',
         'house' => 'Byredo',
         'category' => 'Floral',
-        'price' => '$225',
+        'price' => 18675,
         'size' => '50 ml / 1.7 fl oz',
         'image' => 'https://images.unsplash.com/photo-1587017539504-67cfbddac569?auto=format&fit=crop&w=900&q=85',
         'description' => 'A joyful, sophisticated blend of neroli and marigold warmed by cedar and vetiver.',
@@ -59,9 +61,9 @@ $fragrances = [
         'name' => 'Thé Noir 29',
         'house' => 'Le Labo',
         'category' => 'Woody',
-        'price' => '$230',
+        'price' => 19090,
         'size' => '50 ml / 1.7 fl oz',
-        'image' => 'https://images.unsplash.com/photo-1608528577891-eb055944f2e5?auto=format&fit=crop&w=900&q=85',
+        'image' => 'https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=900&q=85',
         'description' => 'Black tea leaves and dry fig meet bergamot, bay leaf and a slow, smoky base.',
         'notes' => ['Black tea', 'Fig', 'Bay leaf'],
         'accent' => '#a9a58d'
@@ -77,19 +79,19 @@ $fragrances = [
     <title>Aster & Moss | Considered Fragrance</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
-        :root { --ink: #20231f; --muted: #777a72; --paper: #f6f5f0; --line: #deded5; --sage: #63766c; --sand: #d6c3aa; --white: #fffefa; }
+        :root { --ink: #1f2b35; --muted: #6e7476; --paper: #f5f3ee; --line: #d9d3c9; --sage: #59746f; --sand: #c79f63; --wine: #6b3945; --blue: #a9c4cc; --white: #fffdf8; }
         * { box-sizing: border-box; }
         html { scroll-behavior: smooth; }
-        body { margin: 0; color: var(--ink); background: var(--paper); font-family: 'DM Sans', sans-serif; font-size: 14px; }
+        body { margin: 0; color: var(--ink); background: var(--paper); font-family: 'Source Sans 3', sans-serif; font-size: 14px; }
         a { color: inherit; text-decoration: none; }
         button, input { font: inherit; }
         button { cursor: pointer; }
-        .announcement { background: var(--ink); color: #f9f7f0; text-align: center; padding: 10px 20px; font-size: 10px; letter-spacing: .17em; text-transform: uppercase; }
+        .announcement { background: var(--wine); color: #fffaf5; text-align: center; padding: 10px 20px; font-size: 10px; letter-spacing: .17em; text-transform: uppercase; }
         .nav { align-items: center; display: flex; justify-content: space-between; max-width: 1320px; margin: auto; padding: 27px 42px; }
-        .brand { font-family: 'Playfair Display', serif; font-size: 25px; letter-spacing: -.04em; }
-        .brand span { color: var(--sage); }
+        .brand { font-family: 'Cormorant Garamond', serif; font-size: 29px; font-weight: 600; letter-spacing: -.04em; }
+        .brand span { color: var(--sand); }
         .nav-links { display: flex; gap: 32px; margin-left: 55px; }
         .nav-links a { color: #656860; font-size: 11px; letter-spacing: .13em; text-transform: uppercase; }
         .nav-links a:hover { color: var(--ink); }
@@ -100,7 +102,7 @@ $fragrances = [
         .hero { display: grid; grid-template-columns: 48% 52%; margin: 0 auto; max-width: 1320px; min-height: 610px; padding: 0 42px 58px; }
         .hero-copy { align-self: center; padding: 30px 7% 30px 8%; }
         .eyebrow { color: var(--sage); font-size: 10px; font-weight: 600; letter-spacing: .21em; text-transform: uppercase; }
-        h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 500; }
+        h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 600; }
         h1 { font-size: clamp(52px, 6.3vw, 90px); letter-spacing: -.065em; line-height: .96; margin: 23px 0 27px; max-width: 530px; }
         .hero-copy p { color: var(--muted); font-size: 15px; line-height: 1.8; margin: 0 0 32px; max-width: 370px; }
         .button { align-items: center; background: var(--ink); border: 1px solid var(--ink); color: white; display: inline-flex; font-size: 10px; gap: 20px; letter-spacing: .15em; padding: 16px 20px; text-transform: uppercase; transition: background .2s, color .2s; }
@@ -171,6 +173,21 @@ $fragrances = [
         .modal-copy .notes { margin: 22px 0 30px; }
         .modal-close { background: none; border: 0; font-size: 24px; position: absolute; right: 16px; top: 13px; }
         @media (max-width: 800px) { .nav { padding: 22px 20px; } .nav-links { display: none; } .hero { display: flex; flex-direction: column-reverse; padding: 0 20px 45px; } .hero-image { min-height: 440px; } .hero-copy { padding: 48px 10px 15px; } .intro-band { align-items: flex-start; flex-direction: column; gap: 16px; padding: 23px 20px; } .shop, .ritual { padding: 72px 20px; } .section-heading { align-items: flex-start; flex-direction: column; gap: 26px; } .product-grid { grid-template-columns: 1fr; } .product-visual { height: 420px; } .quick-view { opacity: 1; transform: none; } .story { display: block; } .story-photo { min-height: 330px; } .story-copy { padding: 62px 20px; } .story-copy h2 { font-size: 42px; } .ritual-grid { gap: 35px; grid-template-columns: 1fr; } .ritual-step { border: 0; padding: 0 12%; } .newsletter { align-items: flex-start; flex-direction: column; gap: 30px; padding: 48px 20px; } .signup { min-width: 0; width: 100%; } footer { align-items: flex-start; flex-direction: column; gap: 22px; padding: 28px 20px; } .modal { grid-template-columns: 1fr; max-height: 90vh; overflow: auto; } .modal img { min-height: 240px; height: 240px; } .modal-copy { padding: 30px; } }
+        .announcement { background: var(--wine); color: #fffaf5; }
+        .hero-image, .product-visual { background: #e9e2d7; }
+        .intro-band { background: #e1ebe8; }
+        .product-tag { color: var(--wine); }
+        .note { background: rgba(169,196,204,.16); border-color: #c8d8da; color: #5a6f75; }
+        .story { background: #e5ece8; }
+        .text-link { border-color: var(--wine); color: var(--wine); }
+        .button { background: var(--wine); border-color: var(--wine); }
+        .button:hover { color: var(--wine); }
+        .product-actions { display: flex; gap: 6px; }
+        .product-actions button { background: transparent; border: 1px solid var(--wine); color: var(--wine); font-size: 10px; letter-spacing: .1em; padding: 7px 9px; }
+        .product-actions button:hover { background: var(--wine); color: white; }
+        .modal-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+        .modal-actions .button { margin-top: 0; }
+        .modal-actions .secondary { background: transparent; color: var(--wine); }
     </style>
 </head>
 <body>
@@ -180,7 +197,7 @@ $fragrances = [
         <nav class="nav-links" aria-label="Primary navigation"><a href="collection.php">Collection</a><a href="about.php">Our story</a><a href="journal.php">Journal</a></nav>
         <div class="nav-actions">
             <button class="nav-icon" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 5 5"/></svg></button>
-            <button class="nav-icon" aria-label="Shopping bag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8.5h14l-1 12H6l-1-12Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg><span class="bag-count" id="bagCount">0</span></button>
+            <a class="nav-icon" href="bag.php" aria-label="Shopping bag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8.5h14l-1 12H6l-1-12Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg><span class="bag-count" id="bagCount"><?= array_sum($_SESSION['cart'] ?? []) ?></span></a>
         </div>
     </header>
     <main id="top">
@@ -195,7 +212,7 @@ $fragrances = [
                 <?php foreach ($fragrances as $index => $fragrance): ?>
                     <article class="product-card" data-category="<?= htmlspecialchars($fragrance['category']) ?>" data-index="<?= $index ?>">
                         <div class="product-visual"><img src="<?= htmlspecialchars($fragrance['image']) ?>" alt="<?= htmlspecialchars($fragrance['name']) ?> perfume"><span class="product-tag"><?= htmlspecialchars($fragrance['category']) ?></span><button class="quick-view" type="button">Quick view</button></div>
-                        <div class="product-meta"><h3><?= htmlspecialchars($fragrance['name']) ?> <span><?= htmlspecialchars($fragrance['house']) ?></span></h3><p><?= htmlspecialchars($fragrance['description']) ?></p><div class="product-bottom"><span class="price"><?= htmlspecialchars($fragrance['price']) ?> <small>/ <?= htmlspecialchars($fragrance['size']) ?></small></span><div class="notes"><?php foreach (array_slice($fragrance['notes'], 0, 2) as $note): ?><span class="note"><?= htmlspecialchars($note) ?></span><?php endforeach; ?></div></div></div>
+                        <div class="product-meta"><h3><?= htmlspecialchars($fragrance['name']) ?> <span><?= htmlspecialchars($fragrance['house']) ?></span></h3><p><?= htmlspecialchars($fragrance['description']) ?></p><div class="product-bottom"><span class="price"><?= formatInr((float) $fragrance['price']) ?> <small>/ <?= htmlspecialchars($fragrance['size']) ?></small></span><form class="product-actions" action="add_to_bag.php" method="post"><input type="hidden" name="product_id" value="<?= $index + 1 ?>"><button type="submit" name="action" value="add">ADD</button><button type="submit" name="action" value="buy">BUY</button></form></div></div>
                     </article>
                 <?php endforeach; ?>
             </div>
@@ -205,7 +222,7 @@ $fragrances = [
         <section class="newsletter"><div><h2>A softer way to stay in touch.</h2><p>Notes on scent, spaces and the good things worth noticing.</p></div><form class="signup" id="signup"><input type="email" placeholder="Your email address" aria-label="Email address" required><button type="submit">Join us &rarr;</button></form></section>
     </main>
     <footer><small>&copy; <?= date('Y') ?> Aster & Moss. Made with intention.</small><div class="footer-links"><a href="journal.php">Journal</a><a href="contact.php">Contact</a><a href="bag.php">Bag</a></div></footer>
-    <div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-label="Fragrance details"><div class="modal"><button class="modal-close" id="modalClose" aria-label="Close">&times;</button><img id="modalImage" src="" alt=""><div class="modal-copy"><span class="eyebrow" id="modalCategory"></span><h2 id="modalName"></h2><p id="modalDescription"></p><div class="notes" id="modalNotes"></div><strong id="modalPrice"></strong><br><button class="button" id="addToBag" type="button" style="margin-top:28px">Add to bag <span>&rarr;</span></button></div></div></div>
+    <div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-label="Fragrance details"><div class="modal"><button class="modal-close" id="modalClose" aria-label="Close">&times;</button><img id="modalImage" src="" alt=""><div class="modal-copy"><span class="eyebrow" id="modalCategory"></span><h2 id="modalName"></h2><p id="modalDescription"></p><div class="notes" id="modalNotes"></div><strong id="modalPrice"></strong><form class="modal-actions" action="add_to_bag.php" method="post"><input id="modalProductId" type="hidden" name="product_id" value=""><button class="button" name="action" value="add" type="submit">Add to bag <span>&rarr;</span></button><button class="button secondary" name="action" value="buy" type="submit">Buy now</button></form></div></div></div>
     <script>
         const fragrances = <?= json_encode($fragrances, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP) ?>;
         const modal = document.getElementById('modalBackdrop');
@@ -219,6 +236,7 @@ $fragrances = [
         function openModal(index) {
             selected = index;
             const item = fragrances[index];
+            document.getElementById('modalProductId').value = index + 1;
             document.getElementById('modalImage').src = item.image;
             document.getElementById('modalImage').alt = item.name + ' perfume';
             document.getElementById('modalCategory').textContent = item.category + ' / ' + item.house;
@@ -231,7 +249,6 @@ $fragrances = [
         document.querySelectorAll('.quick-view').forEach(button => button.addEventListener('click', event => openModal(Number(event.target.closest('.product-card').dataset.index))));
         document.getElementById('modalClose').addEventListener('click', () => modal.classList.remove('open'));
         modal.addEventListener('click', event => { if (event.target === modal) modal.classList.remove('open'); });
-        document.getElementById('addToBag').addEventListener('click', () => { bagCount += 1; document.getElementById('bagCount').textContent = bagCount; modal.classList.remove('open'); });
         document.getElementById('signup').addEventListener('submit', event => { event.preventDefault(); event.target.innerHTML = '<span style="padding:13px 0;color:#d6c3aa">Thank you — you are on the list.</span>'; });
     </script>
 </body>
