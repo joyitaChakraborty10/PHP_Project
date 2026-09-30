@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Aster & Moss — considered fragrance for a life well-lived.">
-    <title><?= htmlspecialchars($pageTitle) ?> | Aster & Moss</title>
+    <meta name="description" content="JOYITA'S TREASURE — considered fragrance for a life well-lived.">
+    <title><?= htmlspecialchars($pageTitle) ?> | JOYITA'S TREASURE</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
@@ -14,7 +14,7 @@
 <body>
     <div class="announcement">Complimentary shipping on all orders over $150</div>
     <header class="nav">
-        <a class="brand" href="index.php">aster <span>&amp;</span> moss</a>
+        <a class="brand" href="index.php">JOYITA'S   TREASURE</a>
         <nav class="nav-links" aria-label="Primary navigation">
             <a class="<?= $activePage === 'collection' ? 'active' : '' ?>" href="collection.php">Collection</a>
             <a class="<?= $activePage === 'story' ? 'active' : '' ?>" href="about.php">Our story</a>

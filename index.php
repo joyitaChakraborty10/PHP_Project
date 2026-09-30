@@ -193,7 +193,7 @@ $fragrances = [
 <body>
     <div class="announcement">Complimentary shipping on all orders over $150</div>
     <header class="nav">
-        <a class="brand" href="#top">aster <span>&</span> moss</a>
+        <a class="brand" href="#top">JOYITA'S   TREASURE</a>
         <nav class="nav-links" aria-label="Primary navigation"><a href="collection.php">Collection</a><a href="about.php">Our story</a><a href="journal.php">Journal</a></nav>
         <div class="nav-actions">
             <button class="nav-icon" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 5 5"/></svg></button>
